@@ -1,9 +1,9 @@
 {
   "name": "chat-types",
   "version": "1.0.0",
-  "main": "./index.ts",
+  "main": "./lib/index.js",
   "license": "MIT",
-  "typings": "./index.d.ts",
+  "types": "./lib/index.d.ts",
   "dependencies": {
     "runtypes": "^3.1.2"
   }
