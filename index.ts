@@ -1,4 +1,4 @@
-import { Array, Record, String, Union, Literal, Static, Null, Undefined } from 'runtypes';
+import { Array, Record, String, Union, Literal, Static, Null, Undefined, ValidationError } from 'runtypes';
 
 // -- ConnectionId -- //
 const _ConnectionId = String;
@@ -60,6 +60,7 @@ const _WebsocketMessageResponse = Union(
   _NotifyNewMessage
 )
 export type WebsocketMessageResponse = Static<typeof _WebsocketMessageResponse>;
+export const validateWebsocketMessageResponse = (x: any) => _WebsocketMessageResponse.check(x);
 // -- END WebsocketMessageResponse -- //
 
 // -- WebsocketMessageRequest -- //
