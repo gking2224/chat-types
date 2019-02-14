@@ -1,4 +1,4 @@
-import { Array, Record, String, Union, Literal, Static, Null } from 'runtypes';
+import { Array, Record, String, Union, Literal, Static, Null, Undefined } from 'runtypes';
 
 // -- ConnectionId -- //
 const _ConnectionId = String;
@@ -37,7 +37,7 @@ export type BaseChatRoomMessage = Static<typeof _BaseChatRoomMessage>;
 // -- ChatRoomMessageEntity -- //
 const _ChatRoomMessageEntity = _BaseChatRoomMessage.And(Record({
   messageId: String,
-  translation: String.Or(Null),
+  translation: String.Or(Null).Or(Undefined),
   language: String
 }))
 export type ChatRoomMessageEntity = Static<typeof _ChatRoomMessageEntity>;
