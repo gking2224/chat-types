@@ -1,10 +1,16 @@
 {
   "name": "@animando/chat-types",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./lib/index.js",
   "license": "MIT",
   "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc -p ."
+  },
   "dependencies": {
     "runtypes": "^3.1.2"
+  },
+  "devDependencies": {
+    "tslint": "^5.12.1"
   }
 }

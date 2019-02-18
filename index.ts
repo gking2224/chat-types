@@ -1,4 +1,4 @@
-import { Array, Record, String, Union, Literal, Static, Null, Undefined, ValidationError } from 'runtypes';
+import { Array, Record, String, Union, Literal, Static, Null, Undefined, Number } from 'runtypes';
 
 // -- ConnectionId -- //
 const _ConnectionId = String;
@@ -38,7 +38,8 @@ export type BaseChatRoomMessage = Static<typeof _BaseChatRoomMessage>;
 const _ChatRoomMessageEntity = _BaseChatRoomMessage.And(Record({
   messageId: String,
   translation: String.Or(Null).Or(Undefined),
-  language: String
+  language: String,
+  timestamp: Number
 }))
 export type ChatRoomMessageEntity = Static<typeof _ChatRoomMessageEntity>;
 export const validateChatRoomMessageEntity = (m: any) => _ChatRoomMessageEntity.check(m);
